@@ -146,11 +146,11 @@ export const AVAILABLE_LLM_PROVIDERS = [
     requiredConfig: ["NvidiaNimLLMBasePath"],
   },
   {
-    name: "Ollama",
+    name: "UsingOpen Local",
     value: "ollama",
     logo: OllamaLogo,
     options: (settings) => <OllamaLLMOptions settings={settings} />,
-    description: "Run LLMs locally on your own machine.",
+    description: "Run LLMs locally via the UsingOpen runtime (Ollama).",
     requiredConfig: ["OllamaLLMBasePath"],
   },
   {

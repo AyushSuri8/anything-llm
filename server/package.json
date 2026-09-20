@@ -1,5 +1,5 @@
 {
-  "name": "anything-llm-server",
+  "name": "usingopen-server",
   "version": "1.16.1",
   "description": "Server endpoints to process or create content for chatting",
   "main": "index.js",

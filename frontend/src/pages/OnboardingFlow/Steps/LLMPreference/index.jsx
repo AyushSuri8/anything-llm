@@ -121,11 +121,11 @@ const LLMS = [
       "Run full parameter LLMs directly on your NVIDIA RTX GPU using NVIDIA NIM.",
   },
   {
-    name: "Ollama",
+    name: "UsingOpen Local",
     value: "ollama",
     logo: OllamaLogo,
     options: (settings) => <OllamaLLMOptions settings={settings} />,
-    description: "Run LLMs locally on your own machine.",
+    description: "Run LLMs locally via the UsingOpen runtime (Ollama).",
   },
   {
     name: "LM Studio",
