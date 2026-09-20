@@ -34,8 +34,22 @@ class MetaGenerator {
     start_url: "/",
     icons: [
       {
-        src: "/favicon.png",
+        src: "/favicon.svg",
         sizes: "any",
+        type: "image/svg+xml",
+        purpose: "any",
+      },
+      {
+        src: "/web-app-manifest-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "maskable",
+      },
+      {
+        src: "/web-app-manifest-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "maskable",
       },
     ],
   };
@@ -53,7 +67,7 @@ class MetaGenerator {
     return [
       {
         tag: "link",
-        props: { type: "image/svg+xml", href: "/favicon.png" },
+        props: { type: "image/svg+xml", href: "/favicon.svg" },
         content: null,
       },
       {
@@ -139,7 +153,7 @@ class MetaGenerator {
       },
 
       { tag: "link", props: { rel: "icon", href: "/favicon.png" } },
-      { tag: "link", props: { rel: "apple-touch-icon", href: "/favicon.png" } },
+      { tag: "link", props: { rel: "apple-touch-icon", href: "/apple-touch-icon.png" } },
 
       // PWA specific tags
       {
