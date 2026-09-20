@@ -86,7 +86,8 @@ export default function LLMSelectorModal({
     try {
       setHasChanges(false);
 
-      const isRouter = selectedLLMProvider === "anythingllm-router";
+      const isRouter =
+        selectedLLMProvider === "usingopen-router" || selectedLLMProvider === "anythingllm-router";
       if (isRouter && !selectedRouterId)
         throw new Error(t("model-router.chat.select-router-error"));
 
@@ -153,7 +154,8 @@ export default function LLMSelectorModal({
             </p>
           </div>
           {!missingCredentials &&
-            (selectedLLMProvider === "anythingllm-router" ? (
+            (selectedLLMProvider === "usingopen-router" ||
+            selectedLLMProvider === "anythingllm-router" ? (
               <RouterPickerSelection
                 selectedRouterId={selectedRouterId}
                 setSelectedRouterId={setSelectedRouterId}

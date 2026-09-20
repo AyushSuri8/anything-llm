@@ -801,8 +801,6 @@ const SystemSettings = {
   markOnboardingComplete: async function () {
     try {
       await this._updateSettings({ onboarding_complete: true });
-      const { Telemetry } = require("./telemetry");
-      await Telemetry.sendTelemetry("onboarding_complete");
       return true;
     } catch (error) {
       console.error(error.message);

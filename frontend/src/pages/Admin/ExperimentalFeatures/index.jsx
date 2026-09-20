@@ -183,13 +183,13 @@ function SelectedFeatureComponent({ feature, settings, refresh }) {
 
 function FeatureVerification({ children }) {
   if (
-    !window.localStorage.getItem("anythingllm_tos_experimental_feature_set")
+    !window.localStorage.getItem("usingopen_tos_experimental_feature_set")
   ) {
     function acceptTos(e) {
       e.preventDefault();
 
       window.localStorage.setItem(
-        "anythingllm_tos_experimental_feature_set",
+        "usingopen_tos_experimental_feature_set",
         "accepted"
       );
       showToast(

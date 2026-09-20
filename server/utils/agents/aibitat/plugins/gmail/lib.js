@@ -347,7 +347,7 @@ class GmailBridge {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-AnythingLLM-UA": "AnythingLLM-Gmail-Agent/1.0",
+          "X-UsingOpen-UA": "UsingOpen-Gmail-Agent/1.0",
         },
         body: JSON.stringify({
           key: this.#apiKey,

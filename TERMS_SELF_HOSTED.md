@@ -9,9 +9,7 @@ UsingOpen is designed as a **local-first** application. When utilizing the self-
 * **Air-Gap Capability:** UsingOpen can be operated in a strictly air-gapped environment with no internet connectivity, provided local LLM and Vector database providers (e.g., Ollama, LocalAI, LanceDB) are utilized.
 
 ## 2. Telemetry and Analytics
-To improve software performance and stability, UsingOpen includes an optional telemetry feature.
-* **Anonymity:** Collected data is strictly anonymous and contains no Personally Identifiable Information (PII), document content, chat logs, fingerprinting data, or any other sensitive information. Purely usage based data is collected.
-* **Opt-Out:** Users may disable telemetry at any time via the **Settings** menu within the application. Once disabled, no usage data is transmitted to Mintplex Labs.
+UsingOpen collects no telemetry. The upstream anonymous usage-event system has been removed in this fork: no events, no IDs, no network calls.
 
 ## 3. Third-Party Integrations
 UsingOpen allows users to connect to external services (e.g., OpenAI, Anthropic, Pinecone). 
@@ -21,7 +19,7 @@ UsingOpen allows users to connect to external services (e.g., OpenAI, Anthropic,
 _by default, UsingOpen does **everything on-device first** - so you would have to manually configure and enable these integrations to be subject to third party terms._
 
 ## 4. Security & Network
-* **No "Phone Home":** Aside from [optional telemetry](https://github.com/Mintplex-Labs/anything-llm?tab=readme-ov-file#telemetry--privacy), the software does not require an external connection to Mintplex Labs servers to function.
+* **No "Phone Home":** The software does not require an external connection to Mintplex Labs servers to function.
 * **Environment Security:** The user is responsible for securing the host environment, including network firewalls, SSL/TLS encryption, and access control for the UsingOpen instance.
 * **CDN Assets:** As a convenience to international users, we use a hosted CDN to mirror some critical path models (eg: the default embedder and reranking ONNX models) which are not available in all regions. These models are downloaded from our CDN as a fallback, and for any air-gapped installations you can either download these models manually or use another provider. Assets of this nature are downloaded once and cached in your associated local storage.
 

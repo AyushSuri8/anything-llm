@@ -148,7 +148,7 @@ const CommunityHub = {
   },
 
   /**
-   * Import a bundle item to the AnythingLLM instance by downloading the zip file and importing it.
+   * Import a bundle item to the UsingOpen instance by downloading the zip file and importing it.
    * or whatever the item type requires.
    * @param {{url: string, item: object}} params
    * @returns {Promise<{success: boolean, error: string | null}>}

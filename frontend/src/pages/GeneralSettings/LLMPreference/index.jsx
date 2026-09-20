@@ -91,7 +91,7 @@ import OMLXOptions from "@/components/LLMSelection/OMLXOptions";
 
 export const MODEL_ROUTER_PROVIDER = {
   name: "Model Router",
-  value: "anythingllm-router",
+  value: "usingopen-router",
   logo: AnythingLLMIcon,
   options: (settings) => <ModelRouterOptions settings={settings} />,
   description:

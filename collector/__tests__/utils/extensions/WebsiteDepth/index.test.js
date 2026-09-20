@@ -17,7 +17,7 @@ jest.mock("../../../../utils/files", () => {
     writeToServerDocuments: jest.fn(),
     documentsFolder: require("path").join(
       require("os").tmpdir(),
-      "anythingllm-website-depth-tests"
+      "usingopen-website-depth-tests"
     ),
   };
 });
@@ -55,7 +55,7 @@ afterEach(() => {
 });
 
 afterAll(() => {
-  fs.rmSync(path.join(os.tmpdir(), "anythingllm-website-depth-tests"), {
+  fs.rmSync(path.join(os.tmpdir(), "usingopen-website-depth-tests"), {
     recursive: true,
     force: true,
   });

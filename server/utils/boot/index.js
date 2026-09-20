@@ -1,4 +1,3 @@
-const { Telemetry } = require("../../models/telemetry");
 const { BackgroundService } = require("../BackgroundWorkers");
 const { EncryptionManager } = require("../EncryptionManager");
 const { CommunicationKey } = require("../comKey");
@@ -84,11 +83,9 @@ function bootHTTP(app, port = 3001) {
 
 function catchSigTerms() {
   process.once("SIGUSR2", function () {
-    Telemetry.flush();
     process.kill(process.pid, "SIGUSR2");
   });
   process.on("SIGINT", function () {
-    Telemetry.flush();
     process.kill(process.pid, "SIGINT");
   });
 }

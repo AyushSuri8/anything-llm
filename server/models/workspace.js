@@ -251,6 +251,12 @@ const Workspace = {
     if (Object.keys(validatedUpdates).length === 0)
       return { workspace: { id }, message: "No valid fields to update!" };
 
+    const { normalizeRouterProvider, isRouterProvider } = require("../utils/helpers");
+    // Migrate legacy router slug forward on write.
+    if (validatedUpdates?.chatProvider) {
+      validatedUpdates.chatProvider = normalizeRouterProvider(validatedUpdates.chatProvider);
+    }
+
     // If the user unset the chatProvider we will need
     // to then clear the chatModel as well to prevent confusion during
     // LLM loading.
@@ -259,13 +265,13 @@ const Workspace = {
       validatedUpdates.chatModel = null;
     }
 
-    // When switching to anythingllm-router, chatModel is not used.
-    // When switching away from anythingllm-router, clear router_id.
-    if (validatedUpdates?.chatProvider === "anythingllm-router") {
+    // When switching to usingopen-router, chatModel is not used.
+    // When switching away from usingopen-router, clear router_id.
+    if (isRouterProvider(validatedUpdates?.chatProvider)) {
       validatedUpdates.chatModel = null;
     } else if (
       validatedUpdates?.chatProvider &&
-      validatedUpdates.chatProvider !== "anythingllm-router"
+      !isRouterProvider(validatedUpdates.chatProvider)
     ) {
       validatedUpdates.router_id = null;
     }
@@ -538,7 +544,6 @@ const Workspace = {
     )
       await PromptHistory.handlePromptChange(prevData, user); // log the change to the prompt history
 
-    const { Telemetry } = require("./telemetry");
     const { EventLogs } = require("./eventLogs");
     if (
       !newData?.openAiPrompt || // no prompt change
@@ -547,7 +552,6 @@ const Workspace = {
     )
       return;
 
-    await Telemetry.sendTelemetry("workspace_prompt_changed");
     await EventLogs.logEvent(
       "workspace_prompt_changed",
       {
@@ -678,7 +682,8 @@ const Workspace = {
     // Model router delegates to a resolved provider at chat time.
     // Check the router's fallback provider for tool calling support
     // as a reasonable proxy for the router's capabilities.
-    if (provider === "anythingllm-router") {
+    const { isRouterProvider } = require("../utils/helpers");
+    if (isRouterProvider(provider)) {
       const { ModelRouter } = require("./modelRouter");
       const routerId =
         workspace?.router_id ||

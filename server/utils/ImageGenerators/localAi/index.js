@@ -103,9 +103,6 @@ class LocalAiImageGenerator extends BaseImageGenerator {
     } else {
       throw new Error("Image provider returned no image data.");
     }
-    this._sendImageTelemetry("image_generated", {
-      withReferences: images.length > 0,
-    });
     return result;
   }
 }

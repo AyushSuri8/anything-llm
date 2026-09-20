@@ -2,7 +2,6 @@
 const { EventEmitter, setMaxListeners } = require("events");
 const { APIError } = require("./error.js");
 const Providers = require("./providers/index.js");
-const { Telemetry } = require("../../../models/telemetry.js");
 const { v4 } = require("uuid");
 const { ToolReranker } = require("./utils/toolReranker.js");
 
@@ -1102,7 +1101,6 @@ https://docs.anythingllm.com/agent/intelligent-tool-selection
       );
 
       const result = await fn.handler(args);
-      Telemetry.sendTelemetry("agent_tool_call", { tool: name }, null, true);
       this.emitter.emit("toolCallResult", {
         toolName: name,
         arguments: args,
@@ -1270,7 +1268,6 @@ https://docs.anythingllm.com/agent/intelligent-tool-selection
       );
 
       const result = await fn.handler(args);
-      Telemetry.sendTelemetry("agent_tool_call", { tool: name }, null, true);
       this.emitter.emit("toolCallResult", {
         toolName: name,
         arguments: args,

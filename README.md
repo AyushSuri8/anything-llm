@@ -210,50 +210,17 @@ Mintplex Labs & the community maintain a number of deployment methods, scripts, 
 
 ## Telemetry & Privacy
 
-UsingOpen by Mintplex Labs Inc contains a telemetry feature that collects anonymous usage information.
-
-<details>
-<summary><kbd>More about Telemetry & Privacy for UsingOpen</kbd></summary>
-
-### Why?
-
-We use this information to help us understand how UsingOpen is used, to help us prioritize work on new features and bug fixes, and to help us improve UsingOpen's performance and stability.
-
-### Opting out
-
-Set `DISABLE_TELEMETRY` in your server or docker .env settings to "true" to opt out of telemetry. You can also do this in-app by going to the sidebar > `Privacy` and disabling telemetry.
-
-### What do you explicitly track?
-
-We will only track usage details that help us make product and roadmap decisions, specifically:
-
-- Type of your installation (Docker or Desktop)
-
-- When a document is added or removed. No information _about_ the document. Just that the event occurred. This gives us an idea of use.
-
-- Type of vector database in use. This helps us prioritize changes when updates arrive for that provider.
-
-- Type of LLM provider & model tag in use. This helps us prioritize changes when updates arrive for that provider or model, or combination thereof. eg: reasoning vs regular, multi-modal models, etc.
-
-- When a chat is sent. This is the most regular "event" and gives us an idea of the daily-activity of this project across all installations. Again, only the **event** is sent - we have no information on the nature or content of the chat itself.
-
-You can verify these claims by finding all locations `Telemetry.sendTelemetry` is called. Additionally these events are written to the output log so you can also see the specific data which was sent - if enabled. **No IP or other identifying information is collected**. The Telemetry provider is [PostHog](https://posthog.com/) - an open-source telemetry collection service.
-
-We take privacy very seriously, and we hope you understand that we want to learn how our tool is used, without using annoying popup surveys, so we can build something worth using. The anonymous data is _never_ shared with third parties, ever.
-
-[View all telemetry events in source code](https://github.com/search?q=repo%3AMintplex-Labs%2Fanything-llm%20.sendTelemetry(&type=code)
+UsingOpen collects **no telemetry**. The anonymous usage-event system from upstream has been fully removed in this fork: no events are sent, no IDs are created, and there is nothing to opt out of. The `DISABLE_TELEMETRY` setting is kept only for backward compatibility and has no effect.
 
 ### Other outbound connections
 
-If you disable telemetry, you would still see outbound connections to the following services:
+Even without telemetry you will still see outbound connections to the following services, depending on your setup:
 
 - If using an external tool, LLM, Embedding models, or Vector databases, you will still see outbound connections to the respective service provider.
-- `cdn.anythingllm.com` for pulling models from our mirror CDN. This is not tracked by telemetry and is actually useful for those in VPN restricted regions.
+- `cdn.anythingllm.com` for pulling models from the upstream mirror CDN. This is useful for those in VPN restricted regions.
 - `github/githubusercontent.com` There are some various flat files that are downloaded from these domains for context window caching.
 
-Basically, if telemetry is disabled we don't collect anything. However, depending on your setup you may still see outbound connections and would be subject to the terms of service of the respective service provider.
-
-</details>
+All such connections are subject to the terms of service of the respective service provider.
 
 ## 👋 Contributing
 

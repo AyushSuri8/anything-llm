@@ -153,8 +153,9 @@ class EphemeralAgentHandler extends AgentHandler {
   #getFallbackProvider() {
     // If workspace chat uses the model router, fall back to it.
     // Model is null here since the router determines it at resolve time.
-    if (this.#workspace?.chatProvider === "anythingllm-router") {
-      return { provider: "anythingllm-router", model: null };
+    const { isRouterProvider, ROUTER_PROVIDER } = require("../helpers");
+    if (isRouterProvider(this.#workspace?.chatProvider)) {
+      return { provider: ROUTER_PROVIDER, model: null };
     }
 
     // First, fallback to the workspace chat provider and model if they exist
@@ -168,8 +169,8 @@ class EphemeralAgentHandler extends AgentHandler {
     // If workspace does not have chat provider and model fallback
     // to system provider and try to load provider default model
     const systemProvider = process.env.LLM_PROVIDER;
-    if (systemProvider === "anythingllm-router") {
-      return { provider: "anythingllm-router", model: null };
+    if (isRouterProvider(systemProvider)) {
+      return { provider: ROUTER_PROVIDER, model: null };
     }
 
     const systemModel = this.providerDefault(systemProvider);
@@ -213,7 +214,8 @@ class EphemeralAgentHandler extends AgentHandler {
     this.model = this.#fetchModel();
 
     // If provider resolved to model router, resolve the actual provider/model
-    if (this.provider === "anythingllm-router") {
+    const { isRouterProvider } = require("../helpers");
+    if (isRouterProvider(this.provider)) {
       await this.#resolveRouterProvider();
     }
 
@@ -224,7 +226,7 @@ class EphemeralAgentHandler extends AgentHandler {
   }
 
   async #resolveRouterProvider(prompt = null) {
-    const { AnythingLLMModelRouter } = require("../AiProviders/modelRouter");
+    const { UsingOpenModelRouter } = require("../AiProviders/modelRouter");
     const routerWorkspace = this.#workspace?.router_id
       ? this.#workspace
       : {
@@ -234,7 +236,7 @@ class EphemeralAgentHandler extends AgentHandler {
             : null,
         };
 
-    const router = new AnythingLLMModelRouter(routerWorkspace);
+    const router = new UsingOpenModelRouter(routerWorkspace);
     const { ModelRouterService } = require("../router");
     const workspace = this.#workspace;
     const user = this.#userId ? { id: this.#userId } : null;

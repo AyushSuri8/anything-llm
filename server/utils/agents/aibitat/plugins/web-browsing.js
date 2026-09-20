@@ -1,6 +1,6 @@
 const { SystemSettings } = require("../../../../models/systemSettings");
 const { TokenManager } = require("../../../helpers/tiktoken");
-const { getAnythingLLMUserAgent } = require("../../../../endpoints/utils");
+const { getUsingOpenUserAgent } = require("../../../../endpoints/utils");
 const tiktoken = new TokenManager();
 
 const webBrowsing = {
@@ -454,7 +454,7 @@ const webBrowsing = {
               headers: {
                 Authorization: `Bearer ${process.env.AGENT_SEARCHAPI_API_KEY}`,
                 "Content-Type": "application/json",
-                "X-SearchApi-Source": "AnythingLLM",
+                "X-SearchApi-Source": "UsingOpen",
               },
             })
               .then((res) => {
@@ -1130,7 +1130,7 @@ const webBrowsing = {
                 headers: {
                   "Content-Type": "application/json",
                   Authorization: `Bearer ${process.env.AGENT_PERPLEXITY_API_KEY}`,
-                  "X-Pplx-Integration": getAnythingLLMUserAgent(),
+                  "X-Pplx-Integration": getUsingOpenUserAgent(),
                 },
                 body: JSON.stringify({
                   query: query,
@@ -1384,7 +1384,7 @@ const webBrowsing = {
             const headers = {
               "Content-Type": "application/json",
               "User-Agent": "keenable-anythingllm",
-              "X-Keenable-Title": getAnythingLLMUserAgent(),
+              "X-Keenable-Title": getUsingOpenUserAgent(),
             };
 
             // Keyless public endpoint by default; keyed endpoint + X-API-Key
@@ -1478,7 +1478,7 @@ const webBrowsing = {
               // Pin identity encoding: keyless endpoint can advertise gzip with
               // body bytes that Node's decoder rejects (same workaround as LiteLLM).
               "Accept-Encoding": "identity",
-              "X-Client-Info": `skill; client=${getAnythingLLMUserAgent()}`,
+              "X-Client-Info": `skill; client=${getUsingOpenUserAgent()}`,
             };
             if (usingKey) headers["X-API-Key"] = apiKey;
 

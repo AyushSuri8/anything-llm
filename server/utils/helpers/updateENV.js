@@ -1,4 +1,3 @@
-const { Telemetry } = require("../../models/telemetry");
 const { resetAllVectorStores } = require("../vectorStore/resetAllVectorStores");
 
 const KEY_MAPPING = {
@@ -590,9 +589,7 @@ const KEY_MAPPING = {
     envKey: "DISABLE_TELEMETRY",
     checks: [],
     preUpdate: [
-      (_, __, nextValue) => {
-        if (nextValue === "true") Telemetry.sendTelemetry("telemetry_disabled");
-      },
+      () => {},
     ],
   },
 
@@ -1188,6 +1185,7 @@ function supportedLLM(input = "") {
     "cerebras",
     "omlx",
     "anythingllm-router",
+    "usingopen-router",
     "vertex",
   ].includes(input);
   return validSelection ? null : `${input} is not a valid LLM provider.`;

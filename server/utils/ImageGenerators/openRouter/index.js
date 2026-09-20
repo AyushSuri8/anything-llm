@@ -18,7 +18,7 @@ class OpenRouterImageGenerator extends BaseImageGenerator {
         apiKey: process.env.IMAGE_GEN_OPENROUTER_API_KEY,
         defaultHeaders: {
           "HTTP-Referer": "https://anythingllm.com",
-          "X-Title": "AnythingLLM",
+          "X-Title": "UsingOpen",
         },
       }),
       model: process.env.IMAGE_GEN_MODEL_PREF,
@@ -44,7 +44,6 @@ class OpenRouterImageGenerator extends BaseImageGenerator {
 
     const dataUrl =
       completion?.choices?.[0]?.message?.images?.[0]?.image_url?.url;
-    this._sendImageTelemetry("image_generated");
     return { buffer: this._extractImageBuffer(dataUrl) };
   }
 
@@ -73,9 +72,6 @@ class OpenRouterImageGenerator extends BaseImageGenerator {
 
     const dataUrl =
       completion?.choices?.[0]?.message?.images?.[0]?.image_url?.url;
-    this._sendImageTelemetry("image_generated", {
-      withReferences: images.length > 0,
-    });
     return { buffer: this._extractImageBuffer(dataUrl) };
   }
 }
