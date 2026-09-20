@@ -13,7 +13,7 @@ IMAGE="${USINGOPEN_IMAGE:-ghcr.io/ayushsuri8/usingopen:latest}"
 MODEL="${USINGOPEN_MODEL:-qwen3.5:4b}"
 PORT="${USINGOPEN_PORT:-3001}"
 STORAGE="${USINGOPEN_STORAGE:-$HOME/.usingopen}"
-CONTAINER_NAME="usingopen"
+CONTAINER_NAME="${USINGOPEN_CONTAINER:-usingopen}"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -21,8 +21,9 @@ while [[ $# -gt 0 ]]; do
     --model) MODEL="$2"; shift 2 ;;
     --port) PORT="$2"; shift 2 ;;
     --storage) STORAGE="$2"; shift 2 ;;
+    --name) CONTAINER_NAME="$2"; shift 2 ;;
     -h|--help)
-      echo "Usage: install.sh [--image IMG] [--model MODEL] [--port PORT] [--storage DIR]"
+      echo "Usage: install.sh [--image IMG] [--model MODEL] [--port PORT] [--storage DIR] [--name NAME]"
       exit 0 ;;
     *) echo "Unknown flag: $1" >&2; exit 1 ;;
   esac
