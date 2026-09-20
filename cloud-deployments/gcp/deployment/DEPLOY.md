@@ -1,6 +1,6 @@
-# How to deploy a private AnythingLLM instance on GCP
+# How to deploy a private UsingOpen instance on GCP
 
-With a GCP account you can easily deploy a private AnythingLLM instance on GCP. This will create a url that you can access from any browser over HTTP (HTTPS not supported). This single instance will run on your own keys and they will not be exposed - however if you want your instance to be protected it is highly recommend that you set a password once setup is complete.
+With a GCP account you can easily deploy a private UsingOpen instance on GCP. This will create a url that you can access from any browser over HTTP (HTTPS not supported). This single instance will run on your own keys and they will not be exposed - however if you want your instance to be protected it is highly recommend that you set a password once setup is complete.
 
 This deployment is created with GCP Deployment Manager, and produces:
 - 1 Compute Engine VM (`n1-standard-1`, Ubuntu 20.04 LTS, zone `us-central1-a`)

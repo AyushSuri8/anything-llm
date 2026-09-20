@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <p align="center">
-  <a href="https://github.com/Mintplex-Labs/anything-llm/tree/master/open-computer"><img src="https://github.com/Mintplex-Labs/anything-llm/blob/master/open-computer/assets/OPEN_COMPUTER.png?raw=true" alt="Open Computer logo"></a>
+  <a href="https://github.com/AyushSuri8/anything-llm/tree/usingopen-rebrand/open-computer"><img src="https://github.com/Mintplex-Labs/anything-llm/blob/master/open-computer/assets/OPEN_COMPUTER.png?raw=true" alt="Open Computer logo"></a>
 </p>
 
 <p align="center">
@@ -12,7 +12,7 @@
 <video src="https://github.com/user-attachments/assets/79334c87-c5ae-4c2c-8384-d7ef922e4184"></video>
 
 > [!IMPORTANT]
-> This project is a work in progress and is something we intend to bring fully into AnythingLLM — enabling custom, secure, and scalable agent compute for everyone.
+> This project is a work in progress and is something we intend to bring fully into UsingOpen — enabling custom, secure, and scalable agent compute for everyone.
 >
 > ⭐ Star the repo to stay updated!
 
@@ -148,8 +148,8 @@ The bones are solid. The vision is clear. The roadmap is ambitious.
 
 ## 🔗 More Products
 
-- **[AnythingLLM](https://github.com/Mintplex-Labs/anything-llm):** The all-in-one AI app you were looking for.
-- **[AnythingLLM Mobile](https://github.com/Mintplex-Labs/anythingllm-mobile):** AnythingLLM on your phone, MIT licensed.
+- **[UsingOpen](https://github.com/AyushSuri8/anything-llm):** The all-in-one AI app you were looking for.
+- **[UsingOpen Mobile](https://github.com/Mintplex-Labs/anythingllm-mobile):** UsingOpen on your phone, MIT licensed.
 
 <div align="right">
 

@@ -548,9 +548,9 @@ cat > "$HOME_DIR/.config/chromium/Default/Bookmarks" << 'BOOKMARKS'
       "bookmark_bar": {
          "children": [
             {
-               "name": "AnythingLLM",
+               "name": "UsingOpen",
                "type": "url",
-               "url": "https://anythingllm.com"
+               "url": "https://usingopen.com"
             },
             {
                "name": "Star on Github",

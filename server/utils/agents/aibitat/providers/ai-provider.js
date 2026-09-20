@@ -122,7 +122,7 @@ class Provider {
   providerTag = null;
 
   /**
-   * The AnythingLLM provider slug this instance was built for (eg: "openai",
+   * The UsingOpen provider slug this instance was built for (eg: "openai",
    * "anthropic") - set by AIbitat when the provider is instantiated. Unlike
    * `providerTag` or `constructor.name`, this matches the slugs used for
    * model pricing lookups. Null when the origin of the instance is unknown.

@@ -74,7 +74,7 @@ export default function NewBrowserExtensionApiKeyModal({
           </p>
         )}
         <p className="text-xs text-zinc-400 light:text-slate-600">
-          After clicking "Create API Key", AnythingLLM will attempt to connect
+          After clicking "Create API Key", UsingOpen will attempt to connect
           to your browser extension automatically.
         </p>
         <p className="text-xs text-zinc-400 light:text-slate-600">

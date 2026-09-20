@@ -1,9 +1,9 @@
 > [!IMPORTANT]
-> This is a community-maintained template and is not officially supported by the AnythingLLM team. You could encounter issues or even deployment failures in future versions of AnythingLLM. We do our best to keep this template and all community contributions backwards compatible, but we cannot guarantee it.
+> This is a community-maintained template and is not officially supported by the UsingOpen team. You could encounter issues or even deployment failures in future versions of UsingOpen. We do our best to keep this template and all community contributions backwards compatible, but we cannot guarantee it.
 
-# OpenShift Deployment Template for AnythingLLM
+# OpenShift Deployment Template for UsingOpen
 
-This directory contains a specialized Dockerfile and entrypoint script for deploying AnythingLLM on **Red Hat OpenShift** clusters.
+This directory contains a specialized Dockerfile and entrypoint script for deploying UsingOpen on **Red Hat OpenShift** clusters.
 
 ## Why This Template Exists
 
@@ -13,7 +13,7 @@ OpenShift has a unique security model that differs from standard Docker/Kubernet
 2. **GID 0 Requirement**: All containers run with GID 0 (root group) as the primary group
 3. **Restricted SCCs**: The default Security Context Constraints (SCCs) prevent containers from running as specific users
 
-These requirements are incompatible with the standard AnythingLLM Docker image, which uses a fixed `anythingllm` user with UID/GID 1000.
+These requirements are incompatible with the standard UsingOpen Docker image, which uses a fixed `anythingllm` user with UID/GID 1000.
 
 ## Key Differences from Standard Dockerfile
 

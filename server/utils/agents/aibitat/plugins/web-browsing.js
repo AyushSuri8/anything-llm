@@ -24,9 +24,9 @@ const webBrowsing = {
             "Search the internet for real-time information. Look online for current news, recent updates, latest changes, or any information not available locally. Browse the web to find answers about current events, prices, weather, or live data.",
           examples: [
             {
-              prompt: "Look online for recent changes to AnythingLLM",
+              prompt: "Look online for recent changes to UsingOpen",
               call: JSON.stringify({
-                query: "AnythingLLM recent changes updates",
+                query: "UsingOpen recent changes updates",
               }),
             },
             {

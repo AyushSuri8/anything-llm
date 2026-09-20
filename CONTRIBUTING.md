@@ -1,6 +1,6 @@
-# Contributing to AnythingLLM
+# Contributing to UsingOpen
 
-AnythingLLM is an open-source project and we welcome contributions from the community.
+UsingOpen is an open-source project and we welcome contributions from the community.
 
 ## Reporting Issues
 
@@ -18,17 +18,17 @@ If there's an issue you are interested in working on, please leave a comment on 
 
 Keep in mind that we are a small team and have limited resources. We will do our best to review and merge your PRs, but please be patient. Ultimately, **we become the maintainer** of your changes. It is our responsibility to make sure that the changes are working as expected and are of high quality as well as being compatible with the rest of the project both for existing users and for future users & features.
 
-Before you start working on an issue, please read the following so that you don't waste time on something that is not a good fit for the project or is more suitable for a personal fork. We would rather answer a comment on an issue than close a PR after you've spent time on it. Your time is valuable and we appreciate your time and effort to make AnythingLLM better.
+Before you start working on an issue, please read the following so that you don't waste time on something that is not a good fit for the project or is more suitable for a personal fork. We would rather answer a comment on an issue than close a PR after you've spent time on it. Your time is valuable and we appreciate your time and effort to make UsingOpen better.
 
 0. (most important) If you are making a PR that does not have a corresponding issue, **it will not be merged.** _The only exception to this is language translations._
 
-1. If you are modifying the permission system for a new role or something custom, you are likely better off forking the project and building your own version since this is a core part of the project and is only to be maintained by the AnythingLLM team.
+1. If you are modifying the permission system for a new role or something custom, you are likely better off forking the project and building your own version since this is a core part of the project and is only to be maintained by the UsingOpen team.
 
 2. Integrations (LLM, Vector DB, etc.) are reviewed at our discretion. We will eventually get to them. Do not expect us to merge your integration PR instantly since there are often many moving parts and we want to make sure we get it right. We will get to it!
 
 3. It is our discretion to merge or not merge a PR. We value every contribution, but we also value the quality of the code and the user experience we envision for the project. It is a fine line to walk when running a project like this and please understand that merging or not merging a PR is not a reflection of the quality of the contribution and is not personal. We will do our best to provide feedback on the PR and help you make the changes necessary to get it merged.
 
-4. **Security** is always important. If you have a security concern, please do not open an issue. Instead, please open a CVE on our designated reporting platform [Huntr](https://huntr.com) or contact us at [team@mintplexlabs.com](mailto:team@mintplexlabs.com).
+4. **Security** is always important. If you have a security concern, please do not open an issue. Instead, please open a GitHub Security Advisory on this fork or contact us at [support@usingopen.com](mailto:support@usingopen.com).
 
 ## Configuring Git
 
@@ -84,7 +84,7 @@ For the best chance of having your pull request accepted, please follow these gu
 
 ## Project structure
 
-The core library is written in Node.js. There are additional sub-repositories for the embed widget and browser extension. These are not part of the core AnythingLLM project, but are maintained by the AnythingLLM team.
+The core library is written in Node.js. There are additional sub-repositories for the embed widget and browser extension. These are not part of the core UsingOpen project, but are maintained by the UsingOpen team.
 
 * `server`: Node.js server source code
 * `frontend`: React frontend source code
@@ -92,24 +92,24 @@ The core library is written in Node.js. There are additional sub-repositories fo
 
 ## Release process
 
-Changes to the core AnythingLLM project are released through the `master` branch. When a PR is merged into `master`, a new version of the package is published to Docker and GitHub Container Registry under the `latest` tag.
+Changes to the core UsingOpen project are released through the `master` branch. When a PR is merged into `master`, a new version of the package is published to Docker and GitHub Container Registry under the `latest` tag.
 
 When a new version is released, the following steps are taken a new image is built and pushed to Docker Hub and GitHub Container Registry under the associated version tag. Version tags are of the format `v<major>.<minor>.<patch>` and are pinned code, while `latest` is the latest version of the code at any point in time.
 
 ### Desktop propagation
 
-Changes to the desktop app are downstream of the core AnythingLLM project. Releases of the desktop app are published at the same time as the core AnythingLLM project. Code from the core AnythingLLM project is copied into the desktop app into an Electron wrapper. The Electron wrapper that wraps around the core AnythingLLM project is **not** part of the core AnythingLLM project, but is maintained by the AnythingLLM team.
+Changes to the desktop app are downstream of the core UsingOpen project. Releases of the desktop app are published at the same time as the core UsingOpen project. Code from the core UsingOpen project is copied into the desktop app into an Electron wrapper. The Electron wrapper that wraps around the core UsingOpen project is **not** part of the core UsingOpen project, but is maintained by the UsingOpen team.
 
 ## 🔌 Criteria for New LLM Providers
 
-To ensure the long-term maintainability of AnythingLLM and prevent repository bloat, we enforce a vetting process for adding new third-party LLM provider integrations. 
+To ensure the long-term maintainability of UsingOpen and prevent repository bloat, we enforce a vetting process for adding new third-party LLM provider integrations. 
 
 With thousands of new wrapper API services launching daily, we do not accept dedicated integrations for services that lack an established user base or offer no unique technical utility over our existing generic connectors which should be sufficient for most use cases.
 
 While we understand everyone has to start somewhere, we cannot maintain a repository with thousands of **bespoke** LLM integrations that functionally are no different from one another. We want to keep the repository as clean and maintainable as possible since 99% of contributors for this specific integration do their integration PR and never contribute again.
 
 > 🤝 **Strategic Partnership Exception:** 
-> These guidelines apply strictly to unsolicited community or third-party startup contributions. If you are an ecosystem, silicon, or cloud hardware partner engaging directly with the Mintplex Labs core team on a co-developed integration, proof-of-concept, or native optimization project, this vetting process is not applicable.
+> These guidelines apply strictly to unsolicited community or third-party startup contributions. If you are an ecosystem, silicon, or cloud hardware partner engaging directly with the UsingOpen maintainers on a co-developed integration, proof-of-concept, or native optimization project, this vetting process is not applicable.
 
 Before opening an unsolicited issue or submitting a Pull Request for a new provider, it **must** meet both the Technical and Market Viability thresholds below.
 
@@ -123,7 +123,7 @@ We do not accept dedicated integration code for providers whose API architecture
   * **Unique Architectural Features:** Exposes critical, native platform capabilities (e.g., custom server-side routing nodes or proprietary hyper-parameters) that are completely lost when forced through a generic wrapper.
 
 ### 2. Market Viability Threshold
-We cannot act as a discovery or marketing engine for early-stage startups. To qualify for codebase inclusion, a provider must demonstrate an active, existing user base who would benefit from AnythingLLM's functionality. Any of the following criteria are acceptable:
+We cannot act as a discovery or marketing engine for early-stage startups. To qualify for codebase inclusion, a provider must demonstrate an active, existing user base who would benefit from UsingOpen's functionality. Any of the following criteria are acceptable:
 
 * **Community Demand:** An integration issue request must accumulate a minimum of **20 organic upvotes (`+1` reactions)** from unique GitHub users before a PR will be reviewed. 
 * **Footprint Metrics:** The provider or core underlying model organization must possess a verifiable footprint (e.g., `50,000` aggregate downloads on Hugging Face, or `1,000` stars on its core open-source repository).
@@ -143,4 +143,4 @@ We are not anti-AI. We are anti-low-effort. If it looks like you prompted an age
 
 ## License
 
-By contributing to AnythingLLM (this repository), you agree to license your contributions under the MIT license.
+By contributing to UsingOpen (this repository), you agree to license your contributions under the MIT license.

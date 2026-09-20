@@ -207,7 +207,7 @@ async function handleAttachments(context, messages) {
 
 /**
  * Gmail Bridge Library
- * Handles communication with the AnythingLLM Gmail Google Apps Script deployment.
+ * Handles communication with the UsingOpen Gmail Google Apps Script deployment.
  */
 class GmailBridge {
   #deploymentId = null;

@@ -38,7 +38,7 @@ export default function MobileConnectModal({ isOpen, onClose }) {
               Go mobile. Stay local. AnythingLLM Mobile.
             </p>
             <p className="text-[#FFF] text-lg">
-              AnythingLLM for mobile allows you to connect to your workspace's
+              UsingOpen for mobile allows you to connect to your workspace's
               chats, threads, tools, and documents for you to use on the go.
               <br />
               <br />
