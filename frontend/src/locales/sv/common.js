@@ -36,8 +36,7 @@ const TRANSLATIONS = {
     },
     survey: {
       title: "Välkommen till UsingOpen",
-      description:
-        "Hjälp oss att utveckla UsingOpen för dina behov. Valfritt.",
+      description: "Hjälp oss att utveckla UsingOpen för dina behov. Valfritt.",
       email: "Vad är din e-postadress?",
       useCase: "Vad ska du använda UsingOpen till?",
       useCaseWork: "Arbete",

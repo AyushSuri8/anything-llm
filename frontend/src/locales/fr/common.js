@@ -43,8 +43,7 @@ const TRANSLATIONS = {
     },
     data: {
       title: "Gestion des données",
-      description:
-        "Configurez comment UsingOpen stocke et traite vos données.",
+      description: "Configurez comment UsingOpen stocke et traite vos données.",
       settingsHint:
         "Ces paramètres peuvent être modifiés ultérieurement dans les paramètres.",
     },

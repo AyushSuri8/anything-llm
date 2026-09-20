@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Workspace from "@/models/workspace";
 
-async function sendQuestionnaire({ email, useCase, comment }) {
+async function sendQuestionnaire() {
   // UsingOpen removed the upstream onboarding survey: questionnaire responses
   // are never transmitted anywhere. Completion is recorded locally only.
   window.localStorage.setItem(COMPLETE_QUESTIONNAIRE, true);

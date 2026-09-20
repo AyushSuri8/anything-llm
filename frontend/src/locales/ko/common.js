@@ -1342,8 +1342,7 @@ const TRANSLATIONS = {
           '기억은 간결하고 명확한 문장으로 표현해야 합니다. 예: "사용자는 JavaScript보다 Python을 선호합니다"',
         edit_description: "이 메모의 내용을 업데이트하세요.",
         label: "기억",
-        placeholder:
-          "예: 사용자의 이름은 조, 사용자는 UsingOpen에서 근무, 등",
+        placeholder: "예: 사용자의 이름은 조, 사용자는 UsingOpen에서 근무, 등",
         create: "만들다",
         save: "저장",
         cancel: "취소",

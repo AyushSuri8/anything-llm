@@ -182,9 +182,7 @@ function SelectedFeatureComponent({ feature, settings, refresh }) {
 }
 
 function FeatureVerification({ children }) {
-  if (
-    !window.localStorage.getItem("usingopen_tos_experimental_feature_set")
-  ) {
+  if (!window.localStorage.getItem("usingopen_tos_experimental_feature_set")) {
     function acceptTos(e) {
       e.preventDefault();
 

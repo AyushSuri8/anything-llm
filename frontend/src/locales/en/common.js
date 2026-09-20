@@ -787,8 +787,7 @@ const TRANSLATIONS = {
     },
     branding: {
       title: "Branding & Whitelabeling",
-      description:
-        "White-label your UsingOpen instance with custom branding.",
+      description: "White-label your UsingOpen instance with custom branding.",
     },
     chat: {
       title: "Chat",

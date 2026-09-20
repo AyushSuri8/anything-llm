@@ -800,8 +800,7 @@ const TRANSLATIONS = {
     },
     branding: {
       title: "Značení a bílé označení",
-      description:
-        "Bílé označení instance UsingOpen pomocí vlastního značení.",
+      description: "Bílé označení instance UsingOpen pomocí vlastního značení.",
     },
     chat: {
       title: "Chat",

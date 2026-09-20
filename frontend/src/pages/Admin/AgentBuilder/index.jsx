@@ -312,21 +312,6 @@ export default function AgentBuilder() {
     );
   };
 
-  const flowInfoBlock = blocks.find(
-    (block) => block.type === BLOCK_TYPES.FLOW_INFO
-  );
-  const flowEntity = {
-    name: flowInfoBlock?.config?.name || "",
-    description: flowInfoBlock?.config?.description || "",
-    steps: blocks
-      .filter(
-        (block) =>
-          block.type !== BLOCK_TYPES.FINISH &&
-          block.type !== BLOCK_TYPES.FLOW_INFO
-      )
-      .map((block) => ({ type: block.type, config: block.config })),
-  };
-
   return (
     <AvailableVariablesProvider blocks={blocks}>
       <div

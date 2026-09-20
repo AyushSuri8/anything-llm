@@ -1343,8 +1343,7 @@ const TRANSLATIONS = {
     },
     branding: {
       title: "Marka & Beyaz Etiketleme",
-      description:
-        "UsingOpen örneğinizi özel markalamayla beyaz etiketleyin.",
+      description: "UsingOpen örneğinizi özel markalamayla beyaz etiketleyin.",
     },
     chat: {
       title: "Sohbet",

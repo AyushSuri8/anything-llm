@@ -17,7 +17,7 @@ export default function ChatPromptSettings({
 
   // Prompt state
   const [prompt, setPrompt] = useState(workspace?.openAiPrompt ?? "");
-  const [savedPrompt, setSavedPrompt] = useState(workspace?.openAiPrompt ?? "");
+  const [, setSavedPrompt] = useState(workspace?.openAiPrompt ?? "");
   const [defaultSystemPrompt, setDefaultSystemPrompt] = useState("");
 
   // UI state
@@ -29,12 +29,6 @@ export default function ChatPromptSettings({
   const promptRef = useRef(null);
   const promptHistoryRef = useRef(null);
   const historyButtonRef = useRef(null);
-
-
-  // Derived state
-  const isDirty = prompt !== savedPrompt;
-  const hasBeenModified =
-    defaultSystemPrompt && savedPrompt?.trim() !== defaultSystemPrompt?.trim();
 
   // Load variables and handle focus on mount
   useEffect(() => {
@@ -235,4 +229,3 @@ export default function ChatPromptSettings({
     </>
   );
 }
-

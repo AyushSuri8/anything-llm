@@ -7,14 +7,12 @@ import { useTranslation } from "react-i18next";
 import ProviderPrivacy from "@/components/ProviderPrivacy";
 
 export default function PrivacyAndDataHandling() {
-  const [settings, setSettings] = useState({});
   const [loading, setLoading] = useState(true);
   const { t } = useTranslation();
   useEffect(() => {
     async function fetchSettings() {
       setLoading(true);
-      const settings = await System.keys();
-      setSettings(settings);
+      await System.keys();
       setLoading(false);
     }
     fetchSettings();

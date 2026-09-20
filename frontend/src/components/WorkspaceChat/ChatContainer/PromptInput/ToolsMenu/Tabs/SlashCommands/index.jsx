@@ -152,7 +152,6 @@ export default function SlashCommandsTab({
     setSelectedPreset(null);
   };
 
-
   return (
     <>
       {items.map((item, index) => (

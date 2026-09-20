@@ -16,7 +16,11 @@ const FREE_FORM_LLM_SELECTION = ["azure"];
 
 // Some providers do not support model selection via /models
 // and only have a fixed single-model they can use.
-const NO_MODEL_SELECTION = ["default", "usingopen-router", "anythingllm-router"];
+const NO_MODEL_SELECTION = [
+  "default",
+  "usingopen-router",
+  "anythingllm-router",
+];
 
 // Some providers we just fully disable for ease of use.
 const DISABLED_PROVIDERS = [];
@@ -170,7 +174,10 @@ export default function WorkspaceLLMSelection({
 
 // TODO: Add this to agent selector as well as make generic component.
 function ModelSelector({ selectedLLM, workspace, setHasChanges }) {
-  if (selectedLLM === "usingopen-router" || selectedLLM === "anythingllm-router") {
+  if (
+    selectedLLM === "usingopen-router" ||
+    selectedLLM === "anythingllm-router"
+  ) {
     return (
       <RouterSelection workspace={workspace} setHasChanges={setHasChanges} />
     );
