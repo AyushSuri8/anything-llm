@@ -2,6 +2,7 @@ import System from "@/models/system";
 import paths from "@/utils/paths";
 import {
   BookOpen,
+  DiscordLogo,
   GithubLogo,
   Briefcase,
   Envelope,
