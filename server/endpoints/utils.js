@@ -83,13 +83,10 @@ function utilEndpoints(app) {
 
   const { lemonadeUtilsEndpoints } = require("./utils/lemonadeUtilsEndpoints");
   lemonadeUtilsEndpoints(app);
-
-  const { foundryUtilsEndpoints } = require("./utils/foundryUtilsEndpoints");
-  foundryUtilsEndpoints(app);
 }
 
 function getGitVersion() {
-  if (process.env.ANYTHING_LLM_RUNTIME === "docker") return "--";
+  if (process.env.USINGOPEN_RUNTIME === "docker") return "--";
   try {
     return require("child_process")
       .execSync("git rev-parse HEAD")

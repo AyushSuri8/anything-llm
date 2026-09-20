@@ -247,7 +247,7 @@ function getNativeEmbedderModels() {
  *
  * Resolves against whichever management surface this host exposes — see the
  * models module for how that is determined and what each one can report.
- * @see {@link ../AiProviders/foundry/models}
+ * @see {@link ../AiProviders/lemonade/index.js}
  */
 
 /**

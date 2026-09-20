@@ -1397,7 +1397,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "需要验证",
           description:
-            "在发布项目之前，您需要通过 UsingOpen 社区中心进行验证。",
+            "在发布项目之前，您需要通过 AnythingLLM 社区中心进行验证。",
           button: "连接到社区中心",
         },
       },

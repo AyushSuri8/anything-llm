@@ -1566,7 +1566,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "Se requiere autenticación",
           description:
-            "Necesitas autenticarte con el Centro de la Comunidad de UsingOpen antes de publicar elementos.",
+            "Necesitas autenticarte con el Centro de la Comunidad de AnythingLLM antes de publicar elementos.",
           button: "Conectar al Centro de la Comunidad",
         },
       },

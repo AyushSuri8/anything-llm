@@ -1394,7 +1394,7 @@ const TRANSLATIONS = {
       generic: {
         unauthenticated: {
           title: "需要驗證",
-          description: "發布項目前，需先完成 UsingOpen 社群中心驗證。",
+          description: "發布項目前，需先完成 AnythingLLM 社群中心驗證。",
           button: "連接到社群中心",
         },
       },

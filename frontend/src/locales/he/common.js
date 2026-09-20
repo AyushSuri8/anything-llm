@@ -1467,7 +1467,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "נדרש אימות",
           description:
-            "עליך להתאמת עם מרכז הקהילה של UsingOpen לפני פרסום פריטים.",
+            "עליך להתאמת עם מרכז הקהילה של AnythingLLM לפני פרסום פריטים.",
           button: "התחבר למרכז הקהילה",
         },
       },

@@ -1505,7 +1505,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "Nepieciešama autentifikācija",
           description:
-            'Pirms satura publicēšanas ir jāiespējo autentifikācija "UsingOpen" sabiedrības centrā.',
+            'Pirms satura publicēšanas ir jāiespējo autentifikācija "AnythingLLM" sabiedrības centrā.',
           button: "Pievienojieties sabiedrības centram",
         },
       },

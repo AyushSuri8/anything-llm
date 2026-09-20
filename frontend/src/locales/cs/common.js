@@ -1548,7 +1548,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "Vyžadováno ověření",
           description:
-            "Musíte se ověřit pomocí komunitního centra UsingOpen před publikováním položek.",
+            "Musíte se ověřit pomocí komunitního centra AnythingLLM před publikováním položek.",
           button: "Připojit se ke komunitnímu centru",
         },
       },

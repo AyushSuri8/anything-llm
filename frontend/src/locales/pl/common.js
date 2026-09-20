@@ -1540,7 +1540,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "Wymagane uwierzytelnienie",
           description:
-            "Przed opublikowaniem elementów należy uwierzytelnić się w centrum społeczności UsingOpen.",
+            "Przed opublikowaniem elementów należy uwierzytelnić się w centrum społeczności AnythingLLM.",
           button: "Połączenie z centrum społeczności",
         },
       },

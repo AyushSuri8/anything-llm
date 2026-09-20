@@ -1473,7 +1473,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "يتطلب التحقق",
           description:
-            "يجب عليك التحقق من هويتك مع مركز مجتمع UsingOpen قبل نشر أي محتوى.",
+            "يجب عليك التحقق من هويتك مع مركز مجتمع AnythingLLM قبل نشر أي محتوى.",
           button: "تواصل مع مركز المجتمع",
         },
       },

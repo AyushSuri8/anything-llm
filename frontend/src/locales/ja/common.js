@@ -1483,7 +1483,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "本人確認が必要です。",
           description:
-            "アイテムを公開する前に、UsingOpenコミュニティハブで認証する必要があります。",
+            "アイテムを公開する前に、AnythingLLMコミュニティハブで認証する必要があります。",
           button: "コミュニティハブへの接続",
         },
       },

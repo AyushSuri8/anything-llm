@@ -1485,7 +1485,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "인증 필요",
           description:
-            "항목을 게시하려면 UsingOpen 커뮤니티 허브에 인증해야 합니다.",
+            "항목을 게시하려면 AnythingLLM 커뮤니티 허브에 인증해야 합니다.",
           button: "커뮤니티 허브에 연결",
         },
       },

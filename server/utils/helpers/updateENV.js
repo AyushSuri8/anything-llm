@@ -867,21 +867,14 @@ const KEY_MAPPING = {
     checks: [isValidURL],
     postUpdate: [
       (_, __, nextValue) => {
-        const { parseNvidiaNimBasePath } = require("../AiProviders/nvidiaNim");
-        process.env.NVIDIA_NIM_LLM_BASE_PATH =
-          parseNvidiaNimBasePath(nextValue);
+        process.env.NVIDIA_NIM_LLM_BASE_PATH = nextValue;
       },
     ],
   },
   NvidiaNimLLMModelPref: {
     envKey: "NVIDIA_NIM_LLM_MODEL_PREF",
     checks: [],
-    postUpdate: [
-      async (_, __, nextValue) => {
-        const { NvidiaNimLLM } = require("../AiProviders/nvidiaNim");
-        await NvidiaNimLLM.setModelTokenLimit(nextValue);
-      },
-    ],
+    postUpdate: [],
   },
 
   // PPIO Options
@@ -912,14 +905,7 @@ const KEY_MAPPING = {
   FoundryModelPref: {
     envKey: "FOUNDRY_MODEL_PREF",
     checks: [isNotEmpty],
-    postUpdate: [
-      // On new model selection, re-cache the context windows
-      async (_, prevValue, __) => {
-        const { FoundryLLM } = require("../AiProviders/foundry");
-        await FoundryLLM.unloadModelFromEngine(prevValue);
-        await FoundryLLM.cacheContextWindows(true);
-      },
-    ],
+    postUpdate: [],
   },
   FoundryModelTokenLimit: {
     envKey: "FOUNDRY_MODEL_TOKEN_LIMIT",
@@ -1239,7 +1225,7 @@ function requiresForceMode(_, forceModeEnabled = false) {
 }
 
 async function validDockerizedUrl(input = "") {
-  if (process.env.ANYTHING_LLM_RUNTIME !== "docker") return null;
+  if (process.env.USINGOPEN_RUNTIME !== "docker") return null;
 
   try {
     const { isPortInUse, getLocalHosts } = require("./portAvailabilityChecker");

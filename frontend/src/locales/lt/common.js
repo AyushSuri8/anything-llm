@@ -1553,7 +1553,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "Reikalinga autentifikacija",
           description:
-            "Prieš skelbdami elementus, turite prisijungti prie UsingOpen bendruomenės centro.",
+            "Prieš skelbdami elementus, turite prisijungti prie AnythingLLM bendruomenės centro.",
           button: "Prisijungti prie bendruomenės centro",
         },
       },

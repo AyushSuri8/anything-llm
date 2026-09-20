@@ -1643,7 +1643,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "Autenticació requerida",
           description:
-            "Has d'autenticar-te amb el Centre de la comunitat d'UsingOpen abans de publicar elements.",
+            "Has d'autenticar-te amb el Centre de la comunitat d'AnythingLLM abans de publicar elements.",
           button: "Connecta al Centre de la comunitat",
         },
       },

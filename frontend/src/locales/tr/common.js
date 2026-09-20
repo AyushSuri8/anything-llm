@@ -1534,7 +1534,7 @@ const TRANSLATIONS = {
         unauthenticated: {
           title: "Kimlik Doğrulama Gerekli",
           description:
-            "Öğeleri yayınlamadan önce UsingOpen Topluluk Hub'ına kimlik doğrulaması yapmanız gerekir.",
+            "Öğeleri yayınlamadan önce AnythingLLM Topluluk Hub'ına kimlik doğrulaması yapmanız gerekir.",
           button: "Topluluk Hub'ına Bağlan",
         },
       },

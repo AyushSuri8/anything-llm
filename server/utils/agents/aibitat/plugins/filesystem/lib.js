@@ -39,7 +39,7 @@ class FilesystemManager {
    */
   isToolAvailable() {
     if (process.env.NODE_ENV === "development") return true;
-    return process.env.ANYTHING_LLM_RUNTIME === "docker";
+    return process.env.USINGOPEN_RUNTIME === "docker";
   }
 
   #allowedDirectories = [];

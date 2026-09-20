@@ -162,7 +162,7 @@ COPY --chown=usingopen:usingopen --from=frontend-build /app/frontend/dist /app/s
 
 # Setup the environment
 ENV NODE_ENV=production
-ENV ANYTHING_LLM_RUNTIME=docker
+ENV USINGOPEN_RUNTIME=docker
 ENV DEPLOYMENT_VERSION=1.16.1
 
 # Setup the healthcheck
