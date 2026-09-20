@@ -5,9 +5,9 @@ const TRANSLATIONS = {
       getStarted: "Get Started",
     },
     llm: {
-      title: "LLM Preference",
+      title: "UsingOpen Runtime",
       description:
-        "UsingOpen can work with many LLM providers. This will be the service which handles chatting.",
+        "Your local UsingOpen runtime handles chatting. It is detected automatically — no configuration needed.",
     },
     userSetup: {
       title: "User Setup",

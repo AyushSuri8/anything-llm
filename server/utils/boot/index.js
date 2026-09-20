@@ -2,6 +2,7 @@ const { BackgroundService } = require("../BackgroundWorkers");
 const { EncryptionManager } = require("../EncryptionManager");
 const { CommunicationKey } = require("../comKey");
 const setupTelemetry = require("../telemetry");
+const detectLocalRuntime = require("./detectLocalRuntime");
 const eagerLoadContextWindows = require("./eagerLoadContextWindows");
 const markOnboarded = require("./markOnboarded");
 const migrateWebBrowsingToDefault = require("./migrateWebBrowsingToDefault");
@@ -33,6 +34,7 @@ function bootSSL(app, port = 3001) {
       .listen(port, async () => {
         await migrateWebBrowsingToDefault(); // must run before markOnboarded() so a fresh instance is not mistaken for an existing one.
         await markOnboarded();
+        await detectLocalRuntime();
         await setupTelemetry();
         new CommunicationKey(true);
         new EncryptionManager();
@@ -67,6 +69,7 @@ function bootHTTP(app, port = 3001) {
     .listen(port, async () => {
       await migrateWebBrowsingToDefault(); // must run before markOnboarded() so a fresh instance is not mistaken for an existing one.
       await markOnboarded();
+      await detectLocalRuntime();
       await setupTelemetry();
       new CommunicationKey(true);
       new EncryptionManager();

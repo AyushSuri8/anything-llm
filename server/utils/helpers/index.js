@@ -143,7 +143,7 @@ function isRouterProvider(provider) {
   return provider === ROUTER_PROVIDER || provider === LEGACY_ROUTER_PROVIDER;
 }
 function getLLMProvider({ provider = null, model = null } = {}) {
-  const LLMSelection = provider ?? process.env.LLM_PROVIDER ?? "openai";
+  const LLMSelection = provider ?? process.env.LLM_PROVIDER ?? "ollama";
   const embedder = getEmbeddingEngineSelection();
 
   switch (LLMSelection) {
