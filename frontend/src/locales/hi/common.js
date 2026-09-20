@@ -100,12 +100,6 @@ const TRANSLATIONS = {
     "ai-providers": "AI प्रदाता",
     "agent-skills": "एजेंट कौशल",
     "model-router": "मॉडल राउटर",
-    "community-hub": {
-      title: "कम्युनिटी हब",
-      trending: "ट्रेंडिंग देखें",
-      "your-account": "आपका खाता",
-      "import-item": "आइटम आयात करें",
-    },
     admin: "एडमिन",
     tools: "टूल्स",
     "system-prompt-variables": "सिस्टम प्रॉम्प्ट वेरिएबल्स",

@@ -6,7 +6,7 @@ import showToast from "@/utils/toast";
 import PreLoader from "@/components/Preloader";
 import OpenAiLogo from "@/media/llmprovider/openai.png";
 import GenericOpenAiLogo from "@/media/llmprovider/generic-openai.png";
-import AnythingLLMIcon from "@/media/logo/anything-llm-icon.png";
+import UsingOpenIcon from "@/media/logo/usingopen-icon.png";
 import OpenAiWhisperOptions from "@/components/TranscriptionSelection/OpenAiOptions";
 import GenericOpenAiWhisperOptions from "@/components/TranscriptionSelection/GenericOpenAiOptions";
 import NativeTranscriptionOptions from "@/components/TranscriptionSelection/NativeTranscriptionOptions";
@@ -34,7 +34,7 @@ const PROVIDERS = [
   {
     name: "UsingOpen Built-In",
     value: "local",
-    logo: AnythingLLMIcon,
+    logo: UsingOpenIcon,
     options: (settings) => <NativeTranscriptionOptions settings={settings} />,
     description: "Run a built-in whisper model on this instance privately.",
   },

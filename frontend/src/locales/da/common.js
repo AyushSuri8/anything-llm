@@ -100,12 +100,6 @@ const TRANSLATIONS = {
     branding: "Brandstrategi og white-labeling",
     chat: "Chat",
     "mobile-app": "AnythingLLM Mobile",
-    "community-hub": {
-      title: "Fælleshus",
-      trending: "Udforsk populære emner",
-      "your-account": "Dit konti",
-      "import-item": "Importeret vare",
-    },
     channels: "Kanaler",
     "available-channels": {
       telegram: "Telegram",

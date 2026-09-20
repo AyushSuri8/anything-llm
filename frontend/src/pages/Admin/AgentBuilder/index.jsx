@@ -51,7 +51,6 @@ export default function AgentBuilder() {
   const [availableFlows, setAvailableFlows] = useState([]);
   const nameRef = useRef(null);
   const descriptionRef = useRef(null);
-  const [showPublishModal, setShowPublishModal] = useState(false);
 
   useEffect(() => {
     loadAvailableFlows();

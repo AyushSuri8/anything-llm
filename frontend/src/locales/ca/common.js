@@ -99,12 +99,6 @@ const TRANSLATIONS = {
     privacy: "Privadesa i dades",
     "ai-providers": "Proveïdors d'IA",
     "agent-skills": "Habilitats de l'agent",
-    "community-hub": {
-      title: "Centre de la comunitat",
-      trending: "Explora les tendències",
-      "your-account": "El teu compte",
-      "import-item": "Importa un element",
-    },
     admin: "Administrador",
     tools: "Eines",
     "system-prompt-variables": "Variables del missatge del sistema",

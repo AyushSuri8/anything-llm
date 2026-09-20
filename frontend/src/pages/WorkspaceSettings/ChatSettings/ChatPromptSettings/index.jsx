@@ -5,7 +5,6 @@ import Highlighter from "react-highlight-words";
 import { Link, useSearchParams } from "react-router-dom";
 import paths from "@/utils/paths";
 import ChatPromptHistory from "./ChatPromptHistory";
-import { useModal } from "@/hooks/useModal";
 import System from "@/models/system";
 
 export default function ChatPromptSettings({
@@ -31,19 +30,11 @@ export default function ChatPromptSettings({
   const promptHistoryRef = useRef(null);
   const historyButtonRef = useRef(null);
 
-  // Modals
-  const {
-    isOpen: showPublishModal,
-    closeModal: closePublishModal,
-    openModal: openPublishModal,
-  } = useModal();
 
   // Derived state
   const isDirty = prompt !== savedPrompt;
   const hasBeenModified =
     defaultSystemPrompt && savedPrompt?.trim() !== defaultSystemPrompt?.trim();
-  // Community Hub publishing removed in UsingOpen.
-  const showPublishButton = false;
 
   // Load variables and handle focus on mount
   useEffect(() => {
@@ -101,7 +92,6 @@ export default function ChatPromptSettings({
   };
 
   const handlePublishFromHistory = (historicalPrompt) => {
-    openPublishModal();
     setShowPromptHistory(false);
     setTimeout(() => setPrompt(historicalPrompt), 0);
   };
@@ -239,10 +229,6 @@ export default function ChatPromptSettings({
                 Restore to Default
               </button>
             )}
-            <PublishPromptCTA
-              hidden={!showPublishButton}
-              onClick={openPublishModal}
-            />
           </div>
         </div>
       </div>
@@ -250,15 +236,3 @@ export default function ChatPromptSettings({
   );
 }
 
-function PublishPromptCTA({ hidden = false, onClick }) {
-  if (hidden) return null;
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className="border-none text-primary-button hover:text-white light:hover:text-black text-xs font-medium"
-    >
-      Publish to Community Hub
-    </button>
-  );
-}

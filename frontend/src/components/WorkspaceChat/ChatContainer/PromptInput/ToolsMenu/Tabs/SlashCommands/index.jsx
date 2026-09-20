@@ -28,14 +28,8 @@ export default function SlashCommandsTab({
     openModal: openEditModal,
     closeModal: closeEditModal,
   } = useModal();
-  const {
-    isOpen: isPublishModalOpen,
-    openModal: openPublishModal,
-    closeModal: closePublishModal,
-  } = useModal();
   const [presets, setPresets] = useState([]);
   const [selectedPreset, setSelectedPreset] = useState(null);
-  const [presetToPublish, setPresetToPublish] = useState(null);
   const [imageGenEnabled, setImageGenEnabled] = useState(false);
 
   useEffect(() => {
@@ -158,15 +152,6 @@ export default function SlashCommandsTab({
     setSelectedPreset(null);
   };
 
-  const handlePublishPreset = (preset) => {
-    setPresetToPublish({
-      name: preset.command.slice(1),
-      description: preset.description,
-      command: preset.command,
-      prompt: preset.prompt,
-    });
-    openPublishModal();
-  };
 
   return (
     <>

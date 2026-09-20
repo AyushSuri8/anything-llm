@@ -99,12 +99,6 @@ const TRANSLATIONS = {
     branding: "Marka & Beyaz Etiketleme",
     chat: "Sohbet",
     "mobile-app": "AnythingLLM Mobil",
-    "community-hub": {
-      title: "Topluluk Merkezi",
-      trending: "Popüler olanları keşfedin",
-      "your-account": "Hesabınız",
-      "import-item": "İthal Edilen Ürün",
-    },
     channels: "Kanalalar",
     "available-channels": {
       telegram: "Telegram",

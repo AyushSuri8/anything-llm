@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
-import UsingOpen from "./media/logo/anything-llm.png";
-import UsingOpenDark from "./media/logo/anything-llm-dark.png";
+import UsingOpen from "./media/logo/usingopen.png";
+import UsingOpenDark from "./media/logo/usingopen-dark.png";
 import DefaultLoginLogoLight from "./media/illustrations/login-logo.svg";
 import DefaultLoginLogoDark from "./media/illustrations/login-logo-light.svg";
 import System from "./models/system";

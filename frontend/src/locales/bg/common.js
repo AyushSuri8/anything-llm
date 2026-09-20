@@ -101,12 +101,6 @@ const TRANSLATIONS = {
     "ai-providers": "AI доставчици",
     "agent-skills": "Умения на агента",
     "model-router": "Маршрутизатор на модели",
-    "community-hub": {
-      title: "Общностен хъб",
-      trending: "Разгледай популярното",
-      "your-account": "Вашият акаунт",
-      "import-item": "Импортирай елемент",
-    },
     admin: "Администрация",
     tools: "Инструменти",
     "system-prompt-variables": "Променливи в системния промпт",

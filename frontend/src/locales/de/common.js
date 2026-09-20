@@ -99,12 +99,6 @@ const TRANSLATIONS = {
     "browser-extension": "Browser-Extension",
     "system-prompt-variables": "Systempromptvariablen",
     "mobile-app": "AnythingLLM Mobile",
-    "community-hub": {
-      title: "Community Hub",
-      trending: "Neuigkeiten",
-      "your-account": "Community Hub Account",
-      "import-item": "Community Import",
-    },
     channels: "Kanäle",
     "available-channels": {
       telegram: "Telegram",

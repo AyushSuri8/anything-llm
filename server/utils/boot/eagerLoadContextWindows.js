@@ -14,30 +14,10 @@ async function eagerLoadContextWindows() {
   };
 
   switch (currentProvider) {
-    case "lmstudio":
-      const { LMStudioLLM } = require("../AiProviders/lmStudio");
-      await LMStudioLLM.cacheContextWindows(true);
-      log("LMStudio");
-      break;
     case "ollama":
       const { OllamaAILLM } = require("../AiProviders/ollama");
       await OllamaAILLM.cacheContextWindows(true);
       log("Ollama");
-      break;
-    case "foundry":
-      const { FoundryLLM } = require("../AiProviders/foundry");
-      await FoundryLLM.cacheContextWindows(true);
-      log("Foundry");
-      break;
-    case "cerebras":
-      const { CerebrasLLM } = require("../AiProviders/cerebras");
-      await CerebrasLLM.cacheContextWindows(true);
-      log("Cerebras");
-      break;
-    case "omlx":
-      const { OMLXLLM } = require("../AiProviders/omlx");
-      await OMLXLLM.cacheContextWindows(true);
-      log("OMLX");
       break;
   }
 }

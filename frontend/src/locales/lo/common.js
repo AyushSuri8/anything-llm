@@ -101,12 +101,6 @@ const TRANSLATIONS = {
     "ai-providers": "ຜູ້ໃຫ້ບໍລິການ AI",
     "agent-skills": "ທັກສະເອເຈນ",
     "model-router": "ຕົວກຳນົດເສັ້ນທາງແບບຈຳລອງ (Model Router)",
-    "community-hub": {
-      title: "Community Hub",
-      trending: "ສຳຫຼວດສິ່ງທີ່ກຳລັງມາແຮງ",
-      "your-account": "ບັນຊີຂອງທ່ານ",
-      "import-item": "ນຳເຂົ້າລາຍການ",
-    },
     admin: "ຜູ້ດູແລ",
     tools: "ເຄື່ອງມື",
     "system-prompt-variables": "ຕົວປ່ຽນ System Prompt",

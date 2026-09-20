@@ -95,12 +95,6 @@ const TRANSLATIONS = {
     "browser-extension": "浏览器扩展",
     "system-prompt-variables": "系统提示变量",
     "mobile-app": "AnythingLLM 移动版",
-    "community-hub": {
-      title: "社区中心",
-      trending: "探索热门",
-      "your-account": "您的账户",
-      "import-item": "进口商品",
-    },
     channels: "频道",
     "available-channels": {
       telegram: "电报",

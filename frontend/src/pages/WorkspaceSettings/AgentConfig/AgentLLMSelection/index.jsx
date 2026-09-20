@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import AnythingLLMIcon from "@/media/logo/anything-llm-icon.png";
+import UsingOpenIcon from "@/media/logo/usingopen-icon.png";
 import AgentLLMItem from "./AgentLLMItem";
 import { ALL_LLM_PROVIDERS } from "@/pages/GeneralSettings/LLMPreference";
 import { CaretUpDown, Gauge, MagnifyingGlass, X } from "@phosphor-icons/react";
@@ -21,7 +21,7 @@ const WARN_PERFORMANCE = [
 const LLM_DEFAULT = {
   name: "System Default",
   value: "none",
-  logo: AnythingLLMIcon,
+  logo: UsingOpenIcon,
   options: () => <React.Fragment />,
   description:
     "Agents will use the workspace or system LLM unless otherwise specified.",

@@ -101,12 +101,6 @@ const TRANSLATIONS = {
     "ai-providers": "AI pružatelji usluga",
     "agent-skills": "Vještine agenta",
     "model-router": "Usmjerivač modela",
-    "community-hub": {
-      title: "Community Hub",
-      trending: "Istraži popularno",
-      "your-account": "Vaš račun",
-      "import-item": "Uvezi stavku",
-    },
     admin: "Administrator",
     tools: "Alati",
     "system-prompt-variables": "Varijable sistemskog upita",

@@ -99,12 +99,6 @@ const TRANSLATIONS = {
     branding: "Branding & Whitelabeling",
     chat: "Chat",
     "mobile-app": "AnythingLLM Mobiele App",
-    "community-hub": {
-      title: "Centraal punt",
-      trending: "Bekijk populaire onderwerpen",
-      "your-account": "Uw account",
-      "import-item": "Importeren",
-    },
     channels: "Kanaal",
     "available-channels": {
       telegram: "Telegram",

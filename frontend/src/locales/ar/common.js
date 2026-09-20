@@ -97,12 +97,6 @@ const TRANSLATIONS = {
     branding: "التسويق بالعلامة التجارية ووضع العلامات التجارية",
     chat: "دردشة",
     "mobile-app": "AnythingLLM Mobile",
-    "community-hub": {
-      title: "مركز المجتمع",
-      trending: "استكشف الاتجاهات الرائجة",
-      "your-account": "حسابك",
-      "import-item": "استيراد العنصر",
-    },
     channels: "القنوات",
     "available-channels": {
       telegram: "تليجرام",

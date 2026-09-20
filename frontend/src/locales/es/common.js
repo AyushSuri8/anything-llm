@@ -99,12 +99,6 @@ const TRANSLATIONS = {
     contact: "Contactar con soporte",
     "browser-extension": "Extensión del navegador",
     "mobile-app": "AnythingLLM Móvil",
-    "community-hub": {
-      title: "Centro comunitario",
-      trending: "Explora las tendencias más populares",
-      "your-account": "Su cuenta",
-      "import-item": "Importar artículo",
-    },
     channels: "Canales",
     "available-channels": {
       telegram: "Telegram",

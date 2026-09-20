@@ -98,12 +98,6 @@ const TRANSLATIONS = {
     branding: "Брендинг и создание продуктов с собственной меткой.",
     chat: "Чат",
     "mobile-app": "AnythingLLM Mobile",
-    "community-hub": {
-      title: "Центр сообщества",
-      trending: "Изучите популярные темы",
-      "your-account": "Ваш аккаунт",
-      "import-item": "Импорт товара",
-    },
     channels: "Каналы",
     "available-channels": {
       telegram: "Телеграм",

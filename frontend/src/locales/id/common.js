@@ -102,12 +102,6 @@ const TRANSLATIONS = {
     "ai-providers": "Penyedia AI",
     "agent-skills": "Keterampilan Agen",
     "model-router": "Router Model",
-    "community-hub": {
-      title: "Community Hub",
-      trending: "Jelajahi Tren",
-      "your-account": "Akun Anda",
-      "import-item": "Impor Item",
-    },
     admin: "Admin",
     tools: "Alat",
     "system-prompt-variables": "Variabel System Prompt",

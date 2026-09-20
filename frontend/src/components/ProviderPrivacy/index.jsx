@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import System from "@/models/system";
 import { PROVIDER_PRIVACY_MAP } from "./constants";
 import { ArrowSquareOut } from "@phosphor-icons/react";
-import AnythingLLMIcon from "@/media/logo/anything-llm-icon.png";
+import UsingOpenIcon from "@/media/logo/usingopen-icon.png";
 import { Link } from "react-router-dom";
 import { titleCase, sentenceCase } from "text-case";
 
@@ -14,7 +14,7 @@ function defaultProvider(providerString) {
     description: [
       `"${providerString}" has no known data handling policy defined in UsingOpen.`,
     ],
-    logo: AnythingLLMIcon,
+    logo: UsingOpenIcon,
   };
 }
 

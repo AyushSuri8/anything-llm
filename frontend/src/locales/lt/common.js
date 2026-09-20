@@ -98,12 +98,6 @@ const TRANSLATIONS = {
     privacy: "Privatumas ir duomenys",
     "ai-providers": "DI tiekėjai",
     "agent-skills": "Agento įgūdžiai",
-    "community-hub": {
-      title: "Bendruomenės centras",
-      trending: "Naršyti populiarius",
-      "your-account": "Jūsų paskyra",
-      "import-item": "Importuoti elementą",
-    },
     admin: "Admin",
     tools: "Įrankiai",
     "system-prompt-variables": "Sistemos užklausų kintamieji",

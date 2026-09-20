@@ -99,12 +99,6 @@ const TRANSLATIONS = {
     branding: "Thương hiệu & Nhãn trắng",
     chat: "Trò chuyện",
     "mobile-app": "AnythingLLM Di động",
-    "community-hub": {
-      title: "Trung tâm cộng đồng",
-      trending: "Khám phá các nội dung đang thịnh hành",
-      "your-account": "Tài khoản của bạn",
-      "import-item": "Nhập hàng",
-    },
     channels: "Kênh",
     "available-channels": {
       telegram: "Telegram",

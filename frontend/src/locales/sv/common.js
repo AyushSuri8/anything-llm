@@ -102,12 +102,6 @@ const TRANSLATIONS = {
     "ai-providers": "AI-leverantörer",
     "agent-skills": "Agentfärdigheter",
     "model-router": "Modellrouter",
-    "community-hub": {
-      title: "Community Hub",
-      trending: "Utforska populärt",
-      "your-account": "Ditt konto",
-      "import-item": "Importera objekt",
-    },
     admin: "Administration",
     tools: "Verktyg",
     "system-prompt-variables": "Variabler i systemprompt",

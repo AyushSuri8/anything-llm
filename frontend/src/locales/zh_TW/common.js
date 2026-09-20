@@ -95,12 +95,6 @@ const TRANSLATIONS = {
     branding: "品牌與白標設定",
     chat: "對話",
     "mobile-app": "AnythingLLM 行動版",
-    "community-hub": {
-      title: "社群中心",
-      trending: "探索熱門",
-      "your-account": "您的帳戶",
-      "import-item": "匯入項目",
-    },
     channels: "頻道",
     "available-channels": {
       telegram: "電訊",
