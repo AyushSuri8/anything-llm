@@ -1,12 +1,5 @@
 <a name="readme-top"></a>
 
-> [!NOTE]
-> Ayrıca AI ajanlarının kullanabileceği eksiksiz bir bilgisayar ortamı sunan [Open Computer](../open-computer) üzerinde de çalışıyoruz.
->
-> Bu, UsingOpen'in ajan yeteneklerini yeni bir seviyeye taşıyacak ve AI ajan kullanımı için yepyeni bir UX paradigması getirecek.
->
-> ⭐ Güncellemelerden haberdar olmak için depoya yıldız verin!
-
 <p align="center">
   <a href="https://usingopen.com"><img src="https://github.com/Mintplex-Labs/anything-llm/blob/master/images/wordmark.png?raw=true" alt="UsingOpen logo"></a>
 </p>

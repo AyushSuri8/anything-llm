@@ -73,9 +73,8 @@ Everything capabilities-wise is a folder you can copy:
    marketplace. Keep using theirs or build ours (simple JSON protocol).
 3. **Docs / Discord / mobile app / browser extension** — live services;
    mobile + extension need separate forks to rebrand.
-4. **`open-computer/`** — a half-built second product (Windows-in-browser
-   agent sandbox). Decide: cut it from the fork or adopt it — it doubles
-   build and attack surface.
+4. **`open-computer/`** — removed from the fork (was a half-built
+   second product; cut to keep build and attack surface focused).
 
 ## 6. Suggested ownership roadmap
 
