@@ -12,10 +12,7 @@ class NativeEmbeddingReranker {
   static #transformers = null;
   static #initializationPromise = null;
 
-  // This is a folder that Mintplex Labs hosts for those who cannot capture the HF model download
-  // endpoint for various reasons. This endpoint is not guaranteed to be active or maintained
-  // and may go offline at any time at Mintplex Labs's discretion.
-  #fallbackHost = "https://cdn.anythingllm.com/support/models/";
+  // UsingOpen downloads reranker models directly from HuggingFace. No mirror fallback.
 
   constructor() {
     // An alternative model to the mixedbread-ai/mxbai-rerank-xsmall-v1 model (speed on CPU is much slower for this model @ 18docs = 6s)
@@ -50,7 +47,7 @@ class NativeEmbeddingReranker {
     try {
       return new URL(NativeEmbeddingReranker.#transformers.env.remoteHost).host;
     } catch {
-      return this.#fallbackHost;
+      return "huggingface.co";
     }
   }
 
@@ -105,7 +102,6 @@ class NativeEmbeddingReranker {
         // Attempt to load the model and tokenizer in this order:
         // 1. From local file system cache
         // 2. Download and cache from remote host (hf.co)
-        // 3. Download and cache from fallback host (cdn.anythingllm.com)
         await this.#getPreTrainedModel();
         await this.#getPreTrainedTokenizer();
       } finally {
@@ -119,7 +115,7 @@ class NativeEmbeddingReranker {
   /**
    * This function will load the model from the local file system cache, or download and cache it from the remote host.
    * If the model is not found in the local file system cache, it will download and cache it from the remote host.
-   * If the model is not found in the remote host, it will download and cache it from the fallback host.
+   * If the model is not found on HuggingFace it will throw - ensure network access and retry.
    * @returns {Promise<any>} The loaded model.
    */
   async #getPreTrainedModel() {
@@ -152,25 +148,13 @@ class NativeEmbeddingReranker {
         e.message,
         e.stack
       );
-      if (
-        NativeEmbeddingReranker.#transformers.env.remoteHost ===
-        this.#fallbackHost
-      ) {
-        this.log(`Failed to load model ${this.model} from fallback host.`);
-        throw e;
-      }
-
-      this.log(`Falling back to fallback host. ${this.#fallbackHost}`);
-      NativeEmbeddingReranker.#transformers.env.remoteHost = this.#fallbackHost;
-      NativeEmbeddingReranker.#transformers.env.remotePathTemplate = "{model}/";
-      return await this.#getPreTrainedModel();
+      throw e;
     }
   }
 
   /**
    * This function will load the tokenizer from the local file system cache, or download and cache it from the remote host.
    * If the tokenizer is not found in the local file system cache, it will download and cache it from the remote host.
-   * If the tokenizer is not found in the remote host, it will download and cache it from the fallback host.
    * @returns {Promise<any>} The loaded tokenizer.
    */
   async #getPreTrainedTokenizer() {
@@ -203,18 +187,7 @@ class NativeEmbeddingReranker {
         e.message,
         e.stack
       );
-      if (
-        NativeEmbeddingReranker.#transformers.env.remoteHost ===
-        this.#fallbackHost
-      ) {
-        this.log(`Failed to load tokenizer ${this.model} from fallback host.`);
-        throw e;
-      }
-
-      this.log(`Falling back to fallback host. ${this.#fallbackHost}`);
-      NativeEmbeddingReranker.#transformers.env.remoteHost = this.#fallbackHost;
-      NativeEmbeddingReranker.#transformers.env.remotePathTemplate = "{model}/";
-      return await this.#getPreTrainedTokenizer();
+      throw e;
     }
   }
 

@@ -31,10 +31,7 @@ class NativeEmbedder {
    */
   static supportedModels = SUPPORTED_NATIVE_EMBEDDING_MODELS;
 
-  // This is a folder that Mintplex Labs hosts for those who cannot capture the HF model download
-  // endpoint for various reasons. This endpoint is not guaranteed to be active or maintained
-  // and may go offline at any time at Mintplex Labs's discretion.
-  #fallbackHost = "https://cdn.anythingllm.com/support/models/";
+  // UsingOpen downloads embedding models directly from HuggingFace. No mirror fallback.
 
   constructor() {
     this.className = "NativeEmbedder";
@@ -135,17 +132,13 @@ class NativeEmbedder {
     }
   }
 
-  async #fetchWithHost(hostOverride = null) {
+  async #fetchWithHost() {
     try {
       // Convert ESM to CommonJS via import so we can load this library.
       const pipeline = (...args) =>
         import("@xenova/transformers").then(({ pipeline, env }) => {
           if (!this.modelDownloaded) {
             // if model is not downloaded, we will log where we are fetching from.
-            if (hostOverride) {
-              env.remoteHost = hostOverride;
-              env.remotePathTemplate = "{model}/"; // Our S3 fallback url does not support revision File structure.
-            }
             this.log(`Downloading ${this.model} from ${env.remoteHost}`);
           }
           return pipeline(...args);
@@ -173,17 +166,14 @@ class NativeEmbedder {
     } catch (error) {
       return {
         pipeline: null,
-        retry: hostOverride === null ? this.#fallbackHost : false,
+        retry: false,
         error,
       };
     }
   }
 
-  // This function will do a single fallback attempt (not recursive on purpose) to try to grab the embedder model on first embed
-  // since at time, some clients cannot properly download the model from HF servers due to a number of reasons (IP, VPN, etc).
-  // Given this model is critical and nobody reads the GitHub issues before submitting the bug, we get the same bug
-  // report 20 times a day: https://github.com/Mintplex-Labs/anything-llm/issues/821
-  // So to attempt to monkey-patch this we have a single fallback URL to help alleviate duplicate bug reports.
+  // Models are downloaded directly from HuggingFace on first run.
+  // If the download fails, ensure the host can reach huggingface.co and retry.
   async embedderClient() {
     if (NativeEmbedder.#pipelines.has(this.model))
       return NativeEmbedder.#pipelines.get(this.model);
@@ -203,11 +193,9 @@ class NativeEmbedder {
         return fetchResponse.pipeline;
       }
 
-      this.log(
-        `Failed to download model from primary URL. Using fallback ${fetchResponse.retry}`
+      throw new Error(
+        `Failed to download embedding model ${this.model} from HuggingFace. Check network connectivity and retry. Original error: ${fetchResponse.error?.message || fetchResponse.error}`
       );
-      if (!!fetchResponse.retry)
-        fetchResponse = await this.#fetchWithHost(fetchResponse.retry);
       if (fetchResponse.pipeline !== null) {
         this.modelDownloaded = true;
         NativeEmbedder.#pipelines.set(this.model, fetchResponse.pipeline);

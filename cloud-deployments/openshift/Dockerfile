@@ -78,19 +78,11 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
 USER anythingllm
 WORKDIR /app
 
-# Puppeteer does not ship with an ARM86 compatible build for Chromium
-# so web-scraping would be broken in arm docker containers unless we patch it
-# by manually installing a compatible chromedriver.
-RUN echo "Need to patch Puppeteer x Chromium support for ARM86 - installing dep!" && \
-    curl -fSL https://webassets.anythingllm.com/chromium-1088-linux-arm64.zip -o chrome-linux.zip && \
-    unzip chrome-linux.zip && \
-    rm -rf chrome-linux.zip
-
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-ENV CHROME_PATH=/app/chrome-linux/chrome
-ENV PUPPETEER_EXECUTABLE_PATH=/app/chrome-linux/chrome
-
-RUN echo "Done running arm64 specific installation steps"
+# Puppeteer does not ship with an ARM86 compatible build for Chromium.
+# Upstream used a vendor mirror for this; UsingOpen does not ship one.
+# ARM containers fall back to stock Puppeteer behavior - if web-scraping
+# breaks on arm64, install a compatible Chromium manually and set
+# CHROME_PATH / PUPPETEER_EXECUTABLE_PATH accordingly.
 
 #############################################
 
